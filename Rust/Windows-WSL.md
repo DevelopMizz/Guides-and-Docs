@@ -41,6 +41,11 @@ if ("Ubuntu" -ne $UbuntuInstalled) {
 wsl -d Ubuntu 
 ```
 
+### Update packages
+```Shell
+sudo apt update && sudo apt upgrade -y
+```
+
 ## Install rustc 
 [Rust install instructions]https://rust-lang.org/tools/install/
 ```Shell
@@ -52,6 +57,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
  . "$HOME/.cargo/env"
 ```
 
+### Add build tools
+```Shell
+sudo apt install \
+    build-essential \
+    gcc-mingw-w64-x86-64
+```
 ### Add the GNU GCC build target
 ```Shell
 rustup target add x86_64-pc-windows-gnu
