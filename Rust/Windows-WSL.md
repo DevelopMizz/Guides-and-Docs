@@ -40,3 +40,29 @@ if ("Ubuntu" -ne $UbuntuInstalled) {
 ```Powershell
 wsl -d Ubuntu 
 ```
+
+## Install rustc 
+[Rust install instructions]https://rust-lang.org/tools/install/
+```Shell
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+### Update the PATH
+```Shell
+ . "$HOME/.cargo/env"
+```
+
+### Add the GNU GCC build target
+```Shell
+rustup target add x86_64-pc-windows-gnu
+```
+
+### Validate target is installed
+```Shell
+rustup target list --installed
+```
+
+## Build with the GNU GCC target
+```Shell
+cargo build --release --target x86_64-pc-windows-gnu
+```
