@@ -75,5 +75,8 @@ rustup target list --installed
 
 ## Build with the GNU GCC target
 ```Shell
-cargo build --release --target x86_64-pc-windows-gnu
+# Debug
+cargo build --target x86_64-pc-windows-gnu
+# Release
+cargo build --target x86_64-pc-windows-gnu --release
 ```
